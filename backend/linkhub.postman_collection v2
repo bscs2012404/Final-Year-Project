@@ -1,0 +1,1628 @@
+{
+	"info": {
+		"_postman_id": "4b55a03a-8980-4491-9ec0-a61f6301712b",
+		"name": "linkhub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19838250"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"test post 1\",\n    \"user\": \"65909683984fa91174f79559\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"acha esa bhi he kia \",\n    \"user\": \"65909683984fa91174f79559\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/65909c8b8ab38d2cacb1f520/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"65909c8b8ab38d2cacb1f520",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTkwOTY4Mzk4NGZhOTExNzRmNzk1NTkiLCJpYXQiOjE3MDM5Nzk1MjMsImV4cCI6MTcwMzk4MTMyMywidHlwZSI6ImFjY2VzcyJ9.V4tC4vs6TpIrv6pp-8KBtFNjErR9kFk90Vf7p5I3Io0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/65909c8b8ab38d2cacb1f520/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"65909c8b8ab38d2cacb1f520",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTkwOTY4Mzk4NGZhOTExNzRmNzk1NTkiLCJpYXQiOjE3MDM5Nzk1MjMsImV4cCI6MTcwMzk4MTMyMywidHlwZSI6ImFjY2VzcyJ9.V4tC4vs6TpIrv6pp-8KBtFNjErR9kFk90Vf7p5I3Io0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/65909c7e8ab38d2cacb1f51c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"65909c7e8ab38d2cacb1f51c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single post comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/65909c8b8ab38d2cacb1f520",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"65909c8b8ab38d2cacb1f520"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NTkwOTY4Mzk4NGZhOTExNzRmNzk1NTkiLCJpYXQiOjE3MDM5Nzg1NzIsImV4cCI6MTcwMzk4MDM3MiwidHlwZSI6ImFjY2VzcyJ9.XtP9gcUcwob4tiqwxanPHAGIyYPdNoXUZ3eVlOtH7cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/user/65909683984fa91174f79559",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"user",
+								"65909683984fa91174f79559"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/posts/comment/6590aa8293021b3d80cd13f4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"posts",
+								"comment",
+								"6590aa8293021b3d80cd13f4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "feedback",
+			"item": [
+				{
+					"name": "create feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update feedback",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"very good updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/feedback/6590b394139abc019c1e7172",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"feedback",
+								"6590b394139abc019c1e7172"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get feedback",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/feedback",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get feedback id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/feedback/6590b391139abc019c1e716f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"feedback",
+								"6590b391139abc019c1e716f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get feedback id Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"very good\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/feedback/6590b391139abc019c1e716f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"feedback",
+								"6590b391139abc019c1e716f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Education",
+			"item": [
+				{
+					"name": "Create Education",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"school\": \"University of KU\",\r\n  \"degree\": \"Computer Science\",\r\n  \"fieldOfStudy\": \"Software Engineering\",\r\n  \"graduationYear\": 2024\r\n  // Add other fields as needed\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Education",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"school\": \"University of NED\",\r\n  \"degree\": \"Computer Science\",\r\n  \"fieldOfStudy\": \"Software Engineering\",\r\n  \"graduationYear\": 2024\r\n  // Add other fields as needed\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/education/665db869f950544f14bab280",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"education",
+								"665db869f950544f14bab280"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Education By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/education/665db869f950544f14bab280",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"education",
+								"665db869f950544f14bab280"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Education By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/education/665db869f950544f14bab280",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"education",
+								"665db869f950544f14bab280"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Education",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"education"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Experience",
+			"item": [
+				{
+					"name": "Create Experience",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"position\": \"Software Engineer\",\r\n  \"company\": \"Folio3\",\r\n  \"startDate\": \"1 June 2020\",\r\n  \"endDate\": \"1 August 2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/experience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Experience By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"position\": \"Software Engineer\",\r\n  \"company\": \"Folio3\",\r\n  \"startDate\": \"1 June 2020\",\r\n  \"endDate\": \"1 Sept 2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/experience/665dbb0b8b6d9a5314b53015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"experience",
+								"665dbb0b8b6d9a5314b53015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Experience By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/experience/665dbb0b8b6d9a5314b53015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"experience",
+								"665dbb0b8b6d9a5314b53015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Experience By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/experience/665dbb0b8b6d9a5314b53015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"experience",
+								"665dbb0b8b6d9a5314b53015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Experience",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "EN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/experience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Friends",
+			"item": [
+				{
+					"name": "Get All Linked Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/all/friends",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"all",
+								"friends"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Link a Friend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/friends/6590b80087281a377c16e242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"friends",
+								"6590b80087281a377c16e242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlink a Friend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/friends/6590b80087281a377c16e242",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"friends",
+								"6590b80087281a377c16e242"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/v1/users/search/friends/?searchTerm=Hunzala",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"search",
+								"friends",
+								""
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Hunzala"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forbidden Ones",
+			"item": [
+				{
+					"name": "Update other user location (testing only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": {\r\n        \"type\": \"Point\",\r\n        \"coordinates\": [\r\n            40.764,\r\n            -73.974\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/65902daeabb70d3688504f2b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"65902daeabb70d3688504f2b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"item": [
+				{
+					"name": "Get Nearby Friends",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/all/friends/nearby?longitude=40.764&latitude=-73.974&maxDistance=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"all",
+								"friends",
+								"nearby"
+							],
+							"query": [
+								{
+									"key": "longitude",
+									"value": "40.764"
+								},
+								{
+									"key": "latitude",
+									"value": "-73.974"
+								},
+								{
+									"key": "maxDistance",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Educational Matches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/recommendations/education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"recommendations",
+								"education"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Experience Matches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/v1/users/recommendations/experience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"v1",
+								"users",
+								"recommendations",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "EN"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"hanzla1702@gmail.com\",\r\n    \"password\": \"Xyz12345\"\r\n\r\n    // \"email\": \"hanzla1702@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "EN",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\": \"test@onlyfunnel.ai\",\r\n    \"password\": \"Xyz12345\",\r\n    \"name\": \"test company\",\r\n    \"role\": \"company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User (Myself)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "EN"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"KHI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/v1/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Profile Picture",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NjVkYjdhZmYwNWY3NDM5YjgyOTljYzAiLCJpYXQiOjE3MTc0MTc5MTcsImV4cCI6MTcxNzQxOTcxNywidHlwZSI6ImFjY2VzcyJ9.QxyYTZ5wB87pNoyT_Edw29ZLPJ2xjNc6CnDVoLbf5FY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/hunzalamushtaq/Downloads/Untitled (1).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/v1/users/upload/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"upload",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Hunzala",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "Muhstaq",
+							"disabled": true
+						},
+						{
+							"key": "role",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/v1/users/665db7aff05f7439b8299cc0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"665db7aff05f7439b8299cc0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"longitude\": 40.753,\r\n    \"latitude\": -73.983\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/v1/users/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"location"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
